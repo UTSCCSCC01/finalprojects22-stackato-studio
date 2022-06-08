@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react'
+import './App.css';
+import ContactUs from './components/contact_us/ContactUs'; 
 
 function App(){
 
-  return(<h1>Hello</h1>)
+  return (
+    <ContactUs></ContactUs>
+  )
 }
 
 export default App
