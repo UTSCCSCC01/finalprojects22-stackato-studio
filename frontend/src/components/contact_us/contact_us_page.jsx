@@ -11,61 +11,51 @@ import Checkbox from '@mui/material/Checkbox';
 import { MuiThemeProvider, createTheme } from '@mui/material/styles';
 import { red } from '@mui/material/colors';
 
-const ITEM_HEIGHT = 45;
-const ITEM_PADDING_TOP = 8;
-const MenuProps = {
-  PaperProps: {
-    style: {
-      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-      width: 250,
-    },
-  },
-};
+import arrow from "../../assets/arrow.png";
 
-const services = [
-  'Hairdresser',
-  'Barber',
-  'Cleaner',
-  'Massage',
-  'Makeup',
-  'Eyebrow Tech',
-  'Eyelash Tech',
-];
+import paints from "../../assets/paints.png";
+
+
 
 const contact_us_page = () => {
-
     return(
         <body>
+            <img src={paints} className="paints" alt="paints" />
+            <span className="heading">Contact Us</span>
             <section className="box">
 
              <form>
                 <div className="inputs">
                     <div className='row'>
-                    <div className="input"><input type="text" placeholder="Email Address"/></div>
                     <div className="input"><input type="text" placeholder="Full Name"/></div>
                     </div>
 
                     <div className='row'>
-                    <div className="input"><input type="password" placeholder="Password"/></div>
-                    <div className="input"><input type="password" placeholder="Re-enter password"/></div>
+                    <div className="input"><input type="text" placeholder="Email Address" required/></div>
                     </div>
 
                     <div className='row'>
-                    <div className="input" id="address"><input type="text" placeholder="Address"/></div>
-                    <div className="input" id="attachFile">
-                        <label for="myFile">Attach ID: </label>
-                        <input className="id" type="file" id="myFile" name="filename"/>
+                    <div className="input"><input type="text" placeholder="Subject"/></div>
                     </div>
+
+                    <div className='row'>
+                    <div className="input1" id="message"><input type="text" placeholder="Type your message here..."/></div>
                     </div>
                 </div>
 
                 <div className="cardFooter">
-                    <span className='terms'>By clicking SIGN UP, I agree to amorr's <a href='#'>term's and conditions</a> and <a href='#'>privacy policy</a></span>
-                    <input className="submit" type="submit" value="SIGN UP" />
+                    <input className="submit" type="submit" value="Send Message" /> 
                 </div>  
             </form>
 
             </section>
+
+            <section className="box2">
+                <span> Have questions about features, pricing, services or simply want to reach out? Our team would love to help.</span>
+                <br></br>
+                <h3>hi</h3>
+            </section>
+
         </body>
     );
 }

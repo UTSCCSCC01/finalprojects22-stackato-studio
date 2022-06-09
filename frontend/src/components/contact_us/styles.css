@@ -2,15 +2,6 @@
     font-family: 'Poppins';
 }
 
-.provide{
-    font-weight: medium;
-    font-size:28px;
-}
-
-.newTo{
-    font-weight: bold;
-    font-size: 32px;
-}
 
 .box{
     border: solid;
@@ -20,8 +11,15 @@
     left: 771px;
     top: 250px;
     bottom: 700px;  */
-    padding: 100px;
-    margin: 100px 150px;
+
+    position: relative;
+    float: right;
+
+    width: 800px;
+    height: 600px;
+
+    padding: 50px;
+    margin: 300px 150px;
     text-align: center;
 }
 
@@ -33,17 +31,14 @@
 
 .submit{
     padding: 10px;
-    width: 150px;
+    border-radius: 225px;
+    width: 250px;
     font-weight: 900;
     font-size: 18px;
     color: #F9F6EE;
-    background-color: #D46F5E;
+    background-color: black;
 }
 
-.provide{
-    font-size: 22px;
-    font-weight: medium;
-}
 
 .row{
     display: flex;
@@ -51,32 +46,36 @@
 }
 
 .input{
-    flex: 1;
+    border-bottom:solid;
+    flex: auto; 
     display: flex;
     flex-direction: column;
     margin: 10px 10px;
-    border: none;
 }
 
+.input1{
+    border:solid;
+    flex: auto; 
+    display: flex;
+    flex-direction: column;
+    margin: 10px 10px;
+    min-height: 300px;
+
+    inline-size: 150px;
+    overflow-wrap: break-all;
+
+    max
+}
+
+/* When stactic */
 input{
     border:none;
-    border-radius: 30px;
     padding:10px;
     font-size: 16px;
-    padding-left: 15px
+    padding-left: 15px;
+    background-color: transparent;
 }
 
-#address{
-    margin-right: 10px;
-}
-
-#attachFile{
-    display: block;
-}
-
-#myFile{
-    margin-left: -10px;
-}
 
 label{
     padding-left: 0px;
@@ -115,4 +114,77 @@ input[type=submit]{
 
 input[type=submit]:hover{
     transform: scale(1.03);
+}
+
+.heading {
+
+    /* width: 538px;
+    height: 144px;
+    left: 675px;
+    top: 100px; */
+/* 
+    align-self: right;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 60px;
+    line-height: 140px; */
+
+
+    position: absolute;
+    width: 538px;
+    height: 144px;
+    left: 825px;
+    top: 189px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 96px;
+    line-height: 144px;
+
+}
+
+
+.paints {
+    margin-top: 300px;
+    margin-left: 100px;
+}
+
+
+input:focus {
+    outline: none;
+}
+
+
+.box2{
+
+    position: absolute;
+    width: 365px;
+    height: 145px;
+    left: 255px;
+    top: 775px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 1;
+    font-size: 20px;
+    line-height: 30px;
+    border: none;
+    /* position: relative;
+    width: 950px;
+    height: 737px;
+    left: 771px;
+    top: 250px;
+    bottom: 700px;  */
+
+    /* top: 250px;
+    width: 200px;
+    height: 100px;
+    left: 180px; */
+
+    /* padding: 0px;
+    margin: 100px 300px; */
+    /* text-align: center; */
 }
