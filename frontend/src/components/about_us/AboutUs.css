@@ -1,7 +1,7 @@
 .box {
     background-color: #F9F6EE;
     width: 90%;
-    height: 40rem;
+    height: 37rem;
     margin-left: 5%;
     margin-top: 2%;
 
@@ -29,9 +29,9 @@
   }
   
   .container {
-    margin-top: 7%;
+    margin-top: 2%;
     flex: 1;
-  
+    margin-bottom: 2%;
   }
   
   
@@ -74,6 +74,10 @@
     height: 40px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     
+  }
+
+  .click:hover{
+    transform: scale(1.03);
   }
   
   .box{
