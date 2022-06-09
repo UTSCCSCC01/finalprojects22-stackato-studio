@@ -40,7 +40,7 @@ const contact_us_page = () => {
                 </div>
 
                 <div className="cardFooter">
-                    <input className="submit" type="submit" value="Send Message" /> 
+                    <button id="service">Send Message <Icon icon="akar-icons:arrow-right" inline={true} style={{ verticalAlign: '-0.3em', fontSize:'28px' }}/></button>
                 </div>  
             </form>
 
