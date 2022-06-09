@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import './App.css';
-import ContactUs from './components/contact_us/ContactUs'; 
+import ContactUs from './components/contact_us/contact_us_page'; 
 
-function App(){
+const App = () => {
 
   return (
     <ContactUs></ContactUs>
   )
 }
 
-export default App
+export default App;
