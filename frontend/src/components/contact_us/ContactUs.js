@@ -7,17 +7,17 @@ import './ContactUs.css';
 function ContactUs(){
     return (
         <div>
-            <h1 style={{textAlign: "center"}}> Contact Us</h1>
-            {/* <div class="dashed-box">Dashed box</div> */}
-            <div className = "head-text">
-                <div className = "head-image">
-                    <img src={paints}></img>
-                </div>
-                <div class="text-on-image">
-                    <h3>We'd love to get in touch with you</h3>
-                </div>
-
+            <h1 style={{textAlign: "center"}} className = "heading"> Contact Us</h1>
+            { <div class="dashed-box"></div> }
+            <img className='img2' src={paints}></img>
+            <div className = "question"> 
+                <h3 style={{textAlign:"Left"}}>Have questions about</h3>
+                <h3 style={{textAlign:"Left"}}>features, pricing, services or</h3>
+                <h3 style={{textAlign:"Left"}}>simply want to reach out?</h3>
+                <h3 style={{textAlign:"Left"}}>Our team would love to help.</h3>
             </div>
+            
+
         </div>
     );
 }
