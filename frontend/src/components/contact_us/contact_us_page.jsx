@@ -1,15 +1,7 @@
 import './styles.css'
 
 import * as React from 'react';
-import OutlinedInput from '@mui/material/OutlinedInput';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import ListItemText from '@mui/material/ListItemText';
-import Select from '@mui/material/Select';
-import Checkbox from '@mui/material/Checkbox';
-import { MuiThemeProvider, createTheme } from '@mui/material/styles';
-import { red } from '@mui/material/colors';
+import { Icon } from '@iconify/react';
 
 import arrow from "../../assets/arrow.png";
 
@@ -57,14 +49,14 @@ const contact_us_page = () => {
             <section className="box2">
                 <span> Have questions about features, pricing, services or simply want to reach out? Our team would love to help.</span>
                 <br></br>
-                <img src={ig} className="ig" alt="ig" />
-                <span className="info"></span>
+                <br/>
+                <span className="info"><Icon icon="ant-design:instagram-filled" inline={true} style={{ verticalAlign: '-0.2em', fontSize:'28px' }}/>  amorr_ca</span>
                 <br></br>
-                <img src={twitter} className="twitter" alt="twitter" />
+                <span className="info"><Icon icon="akar-icons:twitter-fill" inline={true} style={{ verticalAlign: '-0.2em', fontSize:'28px' }}/>  real_amorr_ca</span>
                 <br></br>
-                <img src={mail} className="mail" alt="mail" />
+                <span className="info"><Icon icon="fluent:mail-16-filled" inline={true} style={{ verticalAlign: '-0.2em', fontSize:'28px' }}/>  contactus@amorr.ca</span>
                 <br></br>
-                <img src={location} className="location" alt="location" />
+                <span className="info"><Icon icon="carbon:location-filled" inline={true} style={{ verticalAlign: '-0.2em', fontSize:'28px' }}/>  1265 Military Trail</span>
                 <br></br>
             </section>
 
