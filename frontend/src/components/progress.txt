@@ -1,0 +1,172 @@
+import React from 'react'; 
+import '../../App.css'; 
+import paints from "../../assets/paints.png"; 
+// import ig from "../../assets/ig.png"; 
+import './ContactUs.css';
+
+function ContactUs(){
+    return (
+        // <div>
+        //     <h1 style={{textAlign: "center"}} className = "heading"> Contact Us</h1>
+        //     { <div class="dashed-box"></div> }
+        //     <img className='img2' src={paints}></img>
+        //     <div className = "question"> 
+        //         <h3 style={{textAlign:"Left"}}>Have questions about</h3>
+        //         <h3 style={{textAlign:"Left"}}>features, pricing, services or</h3>
+        //         <h3 style={{textAlign:"Left"}}>simply want to reach out?</h3>
+        //         <h3 style={{textAlign:"Left"}}>Our team would love to help.</h3>
+
+        <div className='all_QuickGuide'>
+        <div className='guide_container'>
+            <h1 class="hdg_guide">
+                <span>
+                    <span>Quick Guide to using </span>
+                    <span>a</span>
+                    <span>morr</span>
+                </span>
+            </h1>
+            <p className='p_QuickGuide'>1. Use the search bar to search for the name of a specific service provider or select one of the services provided above</p>
+            <p className='p_QuickGuide'>2. Scroll through the options provided and select your desired service provider</p>
+            <p className='p_QuickGuide'>3. Check availability of service provider and find a time that fits your schedule</p>
+            <p className='p_QuickGuide'>4. Select a specific service offered by the service provider, fill out the required information and request an appointment by clicking the 'request' button</p>
+            <p className='p_QuickGuide'>5. Wait for confirmation from the service provider, it will appear as 'confirmed' in the 'my appointments' page</p>
+        </div>
+    </div>
+    );
+}
+
+export default ContactUs; 
+
+
+
+
+
+
+
+
+
+
+/* .image {
+    background: black;
+}
+
+.img1 {
+    width:80%; 
+    height: 40%;
+}*/
+
+/* .img2 {
+    position: absolute;
+    width: 439.99px;
+    height: 396.16px;
+    left: 110px;
+    top: 150px;
+} 
+
+.heading {
+    position: absolute;
+    width: 538px;
+    height: 144px;
+    left: 675px;
+    top: 100px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 60px;
+    line-height: 140px;
+}
+
+ .dashed-box {
+    z-index: 1;
+    border: solid;
+    position: relative;
+    width: 950px;
+    height: 737px;
+    left: 771px;
+    top: 250px;
+    bottom: 700px; 
+  }
+
+  .question{
+
+    position: absolute;
+    width: 365px;
+    height: 145px;
+    left: 264px;
+    top: 620px;
+
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 20px;
+
+  } */
+
+
+  .all_QuickGuide {
+    display: flex;
+    align-items: flex-end;
+    background: #F9F6EE;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+    width: 63%;
+    margin-top: 70px;
+    margin-bottom: 40px;
+    overflow: hidden;
+    float: none;
+}
+
+.guide_container {
+    background: #F9F6EE;
+    float: left;
+    width: 300%;
+    /* box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+    width: 65%;
+    margin-top: 70px;
+    padding-top: 0.5px; */
+}
+
+.hdg_guide {
+    text-align: left;
+    margin-left: 40px;
+    font-family: "poppins";
+    font-weight: 600;
+}
+
+.hdg_guide span {
+    color: black;
+    background: #F9F6EE;
+}
+.hdg_guide span:nth-child(2) {
+    color: #d46f5e;
+}
+.hdg_guide span:nth-child(3) {
+    color: #0b5394;
+}
+
+.p_QuickGuide {
+    font-family: "poppins";
+    font-size: 13px;
+    font-weight: 500;
+    background: #F9F6EE;
+    text-align: left;
+    margin: 25px;
+}
+
+/* .imgRight {
+    width: 150%;
+    background: #F9F6EE;
+    bottom: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+} */
+ 

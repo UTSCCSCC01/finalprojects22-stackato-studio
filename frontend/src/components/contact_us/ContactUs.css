@@ -1,22 +1,4 @@
-/* .image {
-    background: black;
-}
-
-.img1 {
-    width:80%; 
-    height: 40%;
-}*/
-
-.img2 {
-    position: absolute;
-    width: 439.99px;
-    height: 396.16px;
-    left: 110px;
-    top: 150px;
-} 
-
 .heading {
-    position: absolute;
     width: 538px;
     height: 144px;
     left: 675px;
@@ -32,11 +14,6 @@
  .dashed-box {
     z-index: 1;
     border: solid;
-    /* position: relative;
-    height: 8em;
-    margin-bottom: 1em;
-    margin-top: 2em; */
-
     position: relative;
     width: 950px;
     height: 737px;
@@ -44,20 +21,3 @@
     top: 250px;
     bottom: 700px; 
   }
-
-  .question{
-
-    position: absolute;
-    width: 365px;
-    height: 145px;
-    left: 264px;
-    top: 620px;
-
-    /* font-family: 'ariel'; */
-    font-style: normal;
-    font-weight: 600;
-    font-size: 15px;
-    line-height: 20px;
-
-  }
- 
