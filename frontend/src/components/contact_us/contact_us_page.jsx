@@ -17,34 +17,36 @@ const contact_us_page = () => {
     return(
         <body>
             <img src={paints} className="paints" alt="paints" />
-            <span className="heading">Contact Us</span>
-            <section className="box">
 
-             <form>
-                <div className="inputs">
-                    <div className='row'>
-                    <div className="input"><input type="text" placeholder="Full Name"/></div>
+            <div className="right">
+                <div className="heading">Contact Us</div>
+                <section className="box">
+
+                <form>
+                    <div className="inputs">
+                        <div className='row'>
+                        <div className="input"><input type="text" placeholder="Full Name"/></div>
+                        </div>
+
+                        <div className='row'>
+                        <div className="input"><input type="text" placeholder="Email Address" required/></div>
+                        </div>
+
+                        <div className='row'>
+                        <div className="input"><input type="text" placeholder="Subject"/></div>
+                        </div>
+
+                        <div className='row'>
+                        <div className="input1" id="message"><textarea className="textbox" rows="10" cols="40" type="text" placeholder="Type your message here..."/></div>
+                        </div>
                     </div>
 
-                    <div className='row'>
-                    <div className="input"><input type="text" placeholder="Email Address" required/></div>
-                    </div>
-
-                    <div className='row'>
-                    <div className="input"><input type="text" placeholder="Subject"/></div>
-                    </div>
-
-                    <div className='row'>
-                    <div className="input1" id="message"><textarea className="textbox" rows="10" cols="40" type="text" placeholder="Type your message here..."/></div>
-                    </div>
-                </div>
-
-                <div className="cardFooter">
-                    <input className="submit" type="submit" value="Send Message" /> 
-                </div>  
-            </form>
-
-            </section>
+                    <div className="cardFooter">
+                        <input className="submit" type="submit" value="Send Message" /> 
+                    </div>  
+                </form>
+                </section>
+            </div>
 
             <section className="box2">
                 <span> Have questions about features, pricing, services or simply want to reach out? Our team would love to help.</span>

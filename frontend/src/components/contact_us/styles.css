@@ -15,11 +15,13 @@
     position: relative;
     float: right;
 
-    width: 800px;
-    height: 600px;
+    width: 40%;
+    height: 30%;
 
     padding: 50px;
-    margin: 300px 150px;
+    margin-top: -220px;
+    margin-right: 100px;
+    margin-bottom: 150px;
     text-align: center;
 }
 
@@ -66,6 +68,11 @@
     
 }
 
+.paints {
+    width: 30%;
+    resize: auto;
+}
+
 /* When stactic */
 input{
     border:none;
@@ -95,22 +102,6 @@ input[type=submit]{
     cursor: pointer;
 }
 
-@media only screen and (max-width: 1365px){
-    .provide{
-        font-size: 20px;
-    }
-
-    .newTo{
-        font-size: 24px;
-    }
-}
-
-@media only screen and (max-width: 1320px){
-    #myFile{
-        margin-right: -80px;
-    }
-}
-
 input[type=submit]:hover{
     transform: scale(1.03);
 }
@@ -132,23 +123,19 @@ input[type=submit]:hover{
 
 
     position: absolute;
-    width: 538px;
-    height: 144px;
-    left: 825px;
-    top: 189px;
-
+    margin-left: 600px;
+    top: 150px;
+    margin-bottom: 0px;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 600;
-    font-size: 96px;
-    line-height: 144px;
+    font-size: 60px;
 
 }
 
-
 .paints {
-    margin-top: 300px;
-    margin-left: 100px;
+    margin-top: 140px;
+    margin-left: 55px;
 }
 
 
@@ -160,15 +147,15 @@ input:focus {
 .box2{
 
     position: absolute;
-    width: 365px;
-    height: 145px;
-    left: 255px;
-    top: 775px;
+    width: 20%;
+    height: 40%;
+    left: 150px;
+    top: 470px;
 
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 1;
-    font-size: 20px;
+    font-size: 15px;
     line-height: 30px;
     border: none;
 
