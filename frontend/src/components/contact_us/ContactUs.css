@@ -1,4 +1,4 @@
-.image {
+/* .image {
     background: black;
 }
 
@@ -10,4 +10,27 @@
 .img2 {
     width:10%; 
     height: 40%;
-}
+} */
+
+.head-text {
+    position: relative;
+    /* text-align: centre;
+    padding-top: 50px; */
+    color: white;
+ }
+ .text-on-image {
+   position: absolute;
+   right: 10px;
+  left: 10px;
+  bottom: 10px;
+ }
+
+ .dashed-box {
+    position: relative;
+    z-index: 1;
+    border: solid;
+    height: 8em;
+    margin-bottom: 1em;
+    margin-top: 2em;
+  }
+ 
