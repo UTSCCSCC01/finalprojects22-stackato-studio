@@ -15,6 +15,10 @@ import arrow from "../../assets/arrow.png";
 
 import paints from "../../assets/paints.png";
 
+import ig from "../../assets/ig.png";
+import twitter from "../../assets/twitter.png";
+import mail from "../../assets/mail.png";
+import location from "../../assets/location.png";
 
 
 const contact_us_page = () => {
@@ -39,7 +43,7 @@ const contact_us_page = () => {
                     </div>
 
                     <div className='row'>
-                    <div className="input1" id="message"><input type="text" placeholder="Type your message here..."/></div>
+                    <div className="input1" id="message"><input type="text" maxLength={100} placeholder="Type your message here..."/></div>
                     </div>
                 </div>
 
@@ -53,7 +57,15 @@ const contact_us_page = () => {
             <section className="box2">
                 <span> Have questions about features, pricing, services or simply want to reach out? Our team would love to help.</span>
                 <br></br>
-                <h3>hi</h3>
+                <img src={ig} className="ig" alt="ig" />
+                <span className="info"></span>
+                <br></br>
+                <img src={twitter} className="twitter" alt="twitter" />
+                <br></br>
+                <img src={mail} className="mail" alt="mail" />
+                <br></br>
+                <img src={location} className="location" alt="location" />
+                <br></br>
             </section>
 
         </body>

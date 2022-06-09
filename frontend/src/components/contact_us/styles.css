@@ -171,6 +171,8 @@ input:focus {
     font-size: 20px;
     line-height: 30px;
     border: none;
+
+    padding: 2px; 
     /* position: relative;
     width: 950px;
     height: 737px;
@@ -186,4 +188,18 @@ input:focus {
     /* padding: 0px;
     margin: 100px 300px; */
     /* text-align: center; */
+}
+
+.ig{
+    height: 1.5em;
+    width: auto;
+    left: 12.49%;
+    right: 12.48%;
+    top: 12.42%;
+    bottom: 12.42%;
+}
+
+.location{
+    height: 1.5em;
+    width: 1.3em;
 }
