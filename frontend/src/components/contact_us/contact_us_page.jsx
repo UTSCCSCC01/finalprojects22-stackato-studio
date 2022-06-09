@@ -43,7 +43,7 @@ const contact_us_page = () => {
                     </div>
 
                     <div className='row'>
-                    <div className="input1" id="message"><input type="text" maxLength={100} placeholder="Type your message here..."/></div>
+                    <div className="input1" id="message"><textarea className="textbox" rows="10" cols="40" type="text" placeholder="Type your message here..."/></div>
                     </div>
                 </div>
 
