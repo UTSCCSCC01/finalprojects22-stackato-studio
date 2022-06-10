@@ -49,6 +49,10 @@ const contact_us_page = () => {
                                 <div className="input"><input type="text" placeholder="Subject"/></div>
                             </div>
 
+                            <div className='row'>
+                                <div className="input1" id="message"><textarea className="textbox" rows="10" cols="40" type="text" placeholder="Type your message here..."/></div>
+                            </div>
+
                             <div className="cardFooter">
                                 <button id="service">Send Message <Icon icon="akar-icons:arrow-right" inline={true} style={{ verticalAlign: '-0.3em', fontSize:'28px' }}/></button>
                             </div>  

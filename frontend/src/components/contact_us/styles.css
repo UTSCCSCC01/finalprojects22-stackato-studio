@@ -28,7 +28,7 @@
 
     padding: 50px;
     margin-top: -220px;
-    margin-right: 100px;
+    margin-right: 90px;
     margin-bottom: 150px;
     text-align: center;
 }
@@ -110,23 +110,8 @@ input[type=submit]:hover{
 }
 
 .heading {
-
-    /* width: 538px;
-    height: 144px;
-    left: 675px;
-    top: 100px; */
-/* 
-    align-self: right;
-
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 60px;
-    line-height: 140px; */
-
-
     position: absolute;
-    margin-left: 600px;
+    margin-left: 550px;
     top: 150px;
     margin-bottom: 0px;
     font-family: 'Poppins';
@@ -151,9 +136,8 @@ input:focus {
 
     position: absolute;
     width: 20%;
-    height: 40%;
     left: 150px;
-    top: 470px;
+    top: 490px;
 
     font-family: 'Poppins';
     font-style: normal;
