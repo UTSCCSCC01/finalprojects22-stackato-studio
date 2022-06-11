@@ -25,22 +25,17 @@ function App() {
             </h1>
           </div>
           <p class="p1">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-            ullamcorper ipsum erat, nec bibendum turpis venenatis eget. Maecenas
-            et rutrum arcu. Cras vehicula mollis lobortis. Curabitur quis velit
-            id augue porta venenatis. Quisque interdum, tellus eu cursus
-            ultricies, sem enim sagittis sapien, mattis commodo arcu nulla at
-            arcu. Ut sit amet rutrum dolor. Nulla tristique enim libero. Aliquam
-            erat volutpat.
+          Amorr is a web application that serves as an online platform providing 
+          users with the luxury of choosing and receiving various services such as 
+          haircuts, manicures, massages, makeup, and more in the comfort of their home.
           </p>
           <p class="p2">
-            Maecenas luctus ultricies nibh eget ultrices. Fusce porttitor
-            fringilla pharetra. Donec et maximus felis. Quisque interdum eros
-            vitae magna aliquam blandit. Nunc eget urna eu neque lacinia
-            pulvinar. Aliquam erat volutpat. Vestibulum non rutrum quam, sed
-            commodo sapien. Donec quam nisi, convallis et faucibus at, dignissim
-            sit amet lectus. Nulla posuere tristique purus id fermentum.
-            Maecenas vitae ligula sit amet nisl fringilla aliquet.
+          Amorr provides a convenient way to find and have beauty services provided to people who:
+          <br></br>
+          <br></br>Do not have the time (Scheduling issues or Traffic)
+          <br></br>Do not have the means of transportation
+          <br></br>Do not know about the quality of service
+
           </p>
           <div
             style={{
