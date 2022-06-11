@@ -35,7 +35,10 @@ function App() {
           <br></br>Do not have the time (Scheduling issues or Traffic)
           <br></br>Do not have the means of transportation
           <br></br>Do not know about the quality of service
-
+          </p>
+          <p class="p1">
+          Customers and service providers in Amorr go through a rigorous sign-up process to ensure authenticity and security of both our clients and service providers. 
+          So what are you waiting for? Join Amorr and explore the beauty services world now!
           </p>
           <div
             style={{
