@@ -9,6 +9,7 @@ import FormControl from '@mui/material/FormControl';
 import ListItemText from '@mui/material/ListItemText';
 import Select from '@mui/material/Select';
 import Checkbox from '@mui/material/Checkbox';
+import Axios from 'axios';
 
 import {ErrorPopup} from '../error_registration_popup/errorPopup';
 
@@ -63,8 +64,6 @@ const ServiceProviderRegistration = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormErrors(validate(formValues));
-    // If registered correctly, render Success Popup
-    setTriggererrorPopup(true);
   };
   
   const validate = (values) => {
@@ -108,6 +107,16 @@ const ServiceProviderRegistration = () => {
     return errors;
   };
 
+  const fetchEmail = async() => {
+    const response = await Axios('');
+    if (response.data === '400'){
+      setTriggererrorPopup(true);
+    }
+  }
+
+  useEffect(() => {
+    fetchEmail();
+  }, [])
 
   return(
     <body>

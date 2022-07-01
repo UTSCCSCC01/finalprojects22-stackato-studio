@@ -1,6 +1,7 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import "./customer_registration.css";
 import {ErrorPopup} from '../error_registration_popup/errorPopup';
+import Axios from 'axios';
 
 const CustomerRegistration = () => {
 
@@ -20,8 +21,7 @@ const CustomerRegistration = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormErrors(validate(formValues));
-    // If registered correctly, render Success Popup
-    setTriggererrorPopup(true);
+   
   };
   
   const validate = (values) => {
@@ -65,6 +65,16 @@ const CustomerRegistration = () => {
     return errors;
   };
 
+  const fetchEmail = async() => {
+    const response = await Axios('');
+    if (response.data === '400'){
+      setTriggererrorPopup(true);
+    }
+  }
+
+  useEffect(() => {
+    fetchEmail();
+  }, [])
 
   return(
     <body>

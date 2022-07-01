@@ -7,7 +7,7 @@ function App(){
   return (
     <body>
     <Navbar/>
-    <ServiceProviderRegistration/>
+    <CustomerRegistration/>
     </body>
   )
  }
