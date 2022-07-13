@@ -23,24 +23,25 @@ const CustomerNavbar = () => {
     setAnchorEl(null);
   };
   const handleDel = () => {
-    fetch('http://localhost:5000/homepage', {
-      method: 'POST',
-      headers: {"Content-Type": "application/json"},
-  }).then(response => {
-      if (response.ok){
-          console.log('Delete user'); 
-          setDeletionPopup(true);
-          // Set a timer to close the popup after 1.2 seconds for redirecting
-          setTimeout(function () {
-            setDeletionPopup(false);
-              window.location.reload();
-          }, 1300);
-      }else {
-          throw new Error(response.statusText)
-      }
-      }).catch(err => {
-      console.log(err)
-    })
+    setDeletionPopup(true);
+  //   fetch('http://localhost:5000/homepage', {
+  //     method: 'POST',
+  //     headers: {"Content-Type": "application/json"},
+  // }).then(response => {
+  //     if (response.ok){
+  //         console.log('Delete user'); 
+  //         setDeletionPopup(true);
+  //         // Set a timer to close the popup after 1.2 seconds for redirecting
+  //         setTimeout(function () {
+  //           setDeletionPopup(false);
+  //             window.location.reload();
+  //         }, 1300);
+  //     }else {
+  //         throw new Error(response.statusText)
+  //     }
+  //     }).catch(err => {
+  //     console.log(err)
+  //   })
 
 };
 
