@@ -26,14 +26,13 @@ const CustomerNavbar = () => {
     fetch('http://localhost:5000/homepage', {
       method: 'POST',
       headers: {"Content-Type": "application/json"},
-      body: JSON.stringify(body)
   }).then(response => {
       if (response.ok){
           console.log('Delete user'); 
           setDeletionPopup(true);
           // Set a timer to close the popup after 1.2 seconds for redirecting
           setTimeout(function () {
-              setContactUsPopup(false);
+            setDeletionPopup(false);
               window.location.reload();
           }, 1300);
       }else {
