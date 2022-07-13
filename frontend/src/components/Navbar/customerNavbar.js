@@ -7,17 +7,44 @@ import MenuItem from '@mui/material/MenuItem';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 import SettingsIcon from '@mui/icons-material/Settings';
+import DeletionPopup from '../deletion_popup/DeletionPopup';
 
 const CustomerNavbar = () => {
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
+
+  const [triggerDeletionPopup, setDeletionPopup] = React.useState(false);
+
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
   const handleClose = () => {
     setAnchorEl(null);
   };
+  const handleDel = () => {
+    fetch('http://localhost:5000/homepage', {
+      method: 'POST',
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(body)
+  }).then(response => {
+      if (response.ok){
+          console.log('Delete user'); 
+          setDeletionPopup(true);
+          // Set a timer to close the popup after 1.2 seconds for redirecting
+          setTimeout(function () {
+              setContactUsPopup(false);
+              window.location.reload();
+          }, 1300);
+      }else {
+          throw new Error(response.statusText)
+      }
+      }).catch(err => {
+      console.log(err)
+    })
+
+};
+
 
   return (
     
@@ -58,10 +85,11 @@ const CustomerNavbar = () => {
         }}
       >
         <MenuItem onClick={handleClose} sx={{ fontSize: '15px', fontFamily: 'Poppins', color: 'black', backgroundColor: 'white', borderColor: '#d46f5e' }}><SettingsIcon/>  <a href="/profile"><b>Manage Account</b></a></MenuItem>
-        <MenuItem onClick={handleClose} sx={{ fontSize: '15px',fontFamily: 'Poppins', color: 'black', backgroundColor: 'white', borderColor: '#d46f5e' }}><DeleteIcon />  <b>Delete Account</b></MenuItem>
+        <MenuItem onClick={handleDel} sx={{ fontSize: '15px',fontFamily: 'Poppins', color: 'black', backgroundColor: 'white', borderColor: '#d46f5e' }}><DeleteIcon />  <b>Delete Account</b></MenuItem>
         <MenuItem onClick={handleClose} sx={{ fontSize: '15px',fontFamily: 'Poppins', color: 'black', backgroundColor: 'white', borderColor: '#d46f5e' }}><LogoutIcon />  <b>Logout</b></MenuItem>
       </Menu>
       </div>
+      <DeletionPopup trigger={triggerDeletionPopup} />
     </div>
   );
 };
