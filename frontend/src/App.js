@@ -49,6 +49,23 @@ function App(){
     );
   }, [loggedIn, type]);
 
+  fetch("http://localhost:5000/check-user-type", {credentials: 'include'}).then(response =>
+  response.json().then(data => {
+    console.log(data);
+    console.log(data.user_type != "Guest");
+    if (data.user_type == "Guest") {
+      console.log(data.user_type != "Guest");
+    }
+    else if(data.user_type == "Customer") {
+      console.log("Customer");
+    }
+    else{
+      console.log("Service Provider");
+    }
+  })
+);
+
+
   return (
     <body>
     <div>
@@ -62,7 +79,7 @@ function App(){
         <Route path='/' element={<Home/>} />
         <Route path='/home' element={<Home/>} />
         <Route path='/about' element={<AboutUs/>} />
-        <Route path='/contact' element={<DeleteAccount/>} />
+        <Route path='/contact' element={<ContactUs/>} />
         <Route path='/customer-register' element={<CustomerRegistration/>} />
         <Route path='/sp-register' element={<ServiceProviderRegistration/>} />
         <Route path='/FAQ' element={<FAQ/>} />
@@ -71,7 +88,7 @@ function App(){
         <Route path='/initial-signup' element={<InitialSignUp/>} />
         <Route path='/login' element={<Login/>} />
         <Route path='/profile' element={<CustomerProfile/>}/>
-
+        <Route path='/delete-account' element={<DeleteAccount/>}/>
       </Routes>
     </Router>
     </body>

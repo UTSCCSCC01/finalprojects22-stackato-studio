@@ -14,7 +14,7 @@ import delete_account from '../delete_account/Delete_account';
 
 const CustomerNavbar = () => {
 
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -31,7 +31,7 @@ const CustomerNavbar = () => {
   };
   const handleDel = () => {
 
-    navigate('/login');
+    //navigate('/login');
       
       // fetch('http://localhost:5000/contact', {
       //     method: 'DELETE',
@@ -107,7 +107,7 @@ const CustomerNavbar = () => {
         }}
       >
         <MenuItem onClick={handleClose} sx={{ fontSize: '15px', fontFamily: 'Poppins', color: 'black', backgroundColor: 'white', borderColor: '#d46f5e' }}><SettingsIcon/>  <a href="/profile"><b>Manage Account</b></a></MenuItem>
-        <MenuItem onClick={handleDel} sx={{fontSize: '15px',fontFamily: 'Poppins', color: 'black', backgroundColor: 'white', borderColor: '#d46f5e' }}><DeleteIcon />  <b>Delete Account</b></MenuItem>
+        <MenuItem onClick={handleDel} sx={{fontSize: '15px',fontFamily: 'Poppins', color: 'black', backgroundColor: 'white', borderColor: '#d46f5e' }}><DeleteIcon />  <a href="/delete-account"><b>Delete Account</b></a></MenuItem>
         <MenuItem onClick={handleClose} sx={{ fontSize: '15px',fontFamily: 'Poppins', color: 'black', backgroundColor: 'white', borderColor: '#d46f5e' }}><LogoutIcon />  <b>Logout</b></MenuItem>
       </Menu>
       </div>
