@@ -209,45 +209,84 @@ def do_register():  # Assuming username, password, & email regex is implemented 
 
 # ContactUs 
 #########
-@app.route('/contact', methods=['POST'])
-@cross_origin(supports_credentials=True)
-def contact():
-    if request.method == 'POST':
-        return do_contact()
+# @app.route('/contact', methods=['POST'])
+# @cross_origin(supports_credentials=True)
+# def contact():
+#     if request.method == 'POST':
+#         return do_contact()
 
-def do_contact():
+# def do_contact():
 
-    content_type = request.headers.get('Content-Type')
-    r = request 
+#     content_type = request.headers.get('Content-Type')
+#     r = request 
 
-    if (content_type == 'application/json'):
-        json = r.json
-        fullname = json['fullname']
-        email = json['fullname']
-        subject = json['subject']
-        message = json['message']
+#     if (content_type == 'application/json'):
+#         json = r.json
+#         fullname = json['fullname']
+#         email = json['fullname']
+#         subject = json['subject']
+#         message = json['message']
 
-    else:
-        fullname = r.form['fullname']
-        email = r.form['fullname']
-        subject = r.form['subject']
-        message = r.form['message']
+#     else:
+#         fullname = r.form['fullname']
+#         email = r.form['fullname']
+#         subject = r.form['subject']
+#         message = r.form['message']
 
-    new_message = {'fullname': [fullname], 'email': [email], 'subject': [subject], 'message': [message] }
-    df = pd.DataFrame.from_dict(new_message)
-    mu.insert(config, 'contact_us', df)
-    resp = make_response(
-        jsonify(
-            {"message": "Sent message!"}
-        ),
-        200,
-    )
-    resp.headers["Content-Type"] = "application/json"
+#     new_message = {'fullname': [fullname], 'email': [email], 'subject': [subject], 'message': [message] }
+#     df = pd.DataFrame.from_dict(new_message)
+#     mu.insert(config, 'contact_us', df)
+#     resp = make_response(
+#         jsonify(
+#             {"message": "Sent message!"}
+#         ),
+#         200,
+#     )
+#     resp.headers["Content-Type"] = "application/json"
 
-    return resp
+#     return resp
 
 #########
 # End of ContactUs
+
+# Delete Account 
+#########
+
+# NAMED AS CONTSACT US FOR NOW< CHANGE BEFORE PUSHING
+
+@app.route('/DeleteAccount', methods=['DELETE'])
+@cross_origin(supports_credentials=True)
+def delete_account():
+    if request.method == 'DELETE':
+        return fetch()
+def fetch(): # gets uid
+    user_id = get_user_id()
+
+    if user_id == -1:
+        resp = make_response(jsonify( {'message': 'User not logged in'} ), 400,)
+        return resp
+
+    user = mu.load(config, 'amorr.users', f'SELECT * FROM amorr.users WHERE uid = \'{user_id}\'')
+    if len(user) == 0:
+        resp = make_response(
+            jsonify(
+                {"message": "User not found!"}
+            ),
+            404,
+        )
+    else: 
+        mu.delete(config, [f'uid = \'{user_id}\''], 'amorr.users')
+        resp = make_response(
+         jsonify(
+             {"message": "Deleted User!"}
+         ),
+         200,
+     )
+    resp.headers["Content-Type"] = "application/json"
+    return resp
+
+#########
+# End of Delete Account 
 
 # get-profile
 #########

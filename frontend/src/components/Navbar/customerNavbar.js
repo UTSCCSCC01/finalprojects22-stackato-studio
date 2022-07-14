@@ -8,11 +8,18 @@ import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 import SettingsIcon from '@mui/icons-material/Settings';
 import DeletionPopup from '../deletion_popup/DeletionPopup';
+import { useNavigate } from "react-router-dom";
+import delete_account from '../delete_account/Delete_account';
+
 
 const CustomerNavbar = () => {
 
+  const navigate = useNavigate();
+
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
+
+  
 
   const [triggerDeletionPopup, setDeletionPopup] = React.useState(false);
 
@@ -23,7 +30,24 @@ const CustomerNavbar = () => {
     setAnchorEl(null);
   };
   const handleDel = () => {
-    setDeletionPopup(true);
+
+    navigate('/login');
+      
+      // fetch('http://localhost:5000/contact', {
+      //     method: 'DELETE',
+      //     headers: {"Content-Type": "application/json"},
+      // }).then(response => {
+      //     if (response.ok){
+      //         console.log('New message added'); 
+      //     }else {
+      //         throw new Error(response.statusText)
+      //     }
+      //     }).catch(err => {
+      //     console.log(err)
+      //   })
+
+  };
+    //setDeletionPopup(true);
   //   fetch('http://localhost:5000/homepage', {
   //     method: 'POST',
   //     headers: {"Content-Type": "application/json"},
@@ -42,8 +66,6 @@ const CustomerNavbar = () => {
   //     }).catch(err => {
   //     console.log(err)
   //   })
-
-};
 
 
   return (
@@ -85,7 +107,7 @@ const CustomerNavbar = () => {
         }}
       >
         <MenuItem onClick={handleClose} sx={{ fontSize: '15px', fontFamily: 'Poppins', color: 'black', backgroundColor: 'white', borderColor: '#d46f5e' }}><SettingsIcon/>  <a href="/profile"><b>Manage Account</b></a></MenuItem>
-        <MenuItem onClick={handleDel} sx={{ fontSize: '15px',fontFamily: 'Poppins', color: 'black', backgroundColor: 'white', borderColor: '#d46f5e' }}><DeleteIcon />  <b>Delete Account</b></MenuItem>
+        <MenuItem onClick={handleDel} sx={{fontSize: '15px',fontFamily: 'Poppins', color: 'black', backgroundColor: 'white', borderColor: '#d46f5e' }}><DeleteIcon />  <b>Delete Account</b></MenuItem>
         <MenuItem onClick={handleClose} sx={{ fontSize: '15px',fontFamily: 'Poppins', color: 'black', backgroundColor: 'white', borderColor: '#d46f5e' }}><LogoutIcon />  <b>Logout</b></MenuItem>
       </Menu>
       </div>

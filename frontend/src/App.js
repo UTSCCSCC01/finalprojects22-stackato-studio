@@ -16,6 +16,8 @@ import InitialSignUp from './components/initial-signup/initial-signup';
 import Login from './components/login-page/login-page';
 import CustomerProfile from './components/customer_profile/customer_profile';
 
+import DeleteAccount from './components/delete_account/Delete_account';
+
 import {
   BrowserRouter as Router,
   Routes,
@@ -60,7 +62,7 @@ function App(){
         <Route path='/' element={<Home/>} />
         <Route path='/home' element={<Home/>} />
         <Route path='/about' element={<AboutUs/>} />
-        <Route path='/contact' element={<ContactUs/>} />
+        <Route path='/contact' element={<DeleteAccount/>} />
         <Route path='/customer-register' element={<CustomerRegistration/>} />
         <Route path='/sp-register' element={<ServiceProviderRegistration/>} />
         <Route path='/FAQ' element={<FAQ/>} />
