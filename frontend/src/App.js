@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from 'react';
-import ServiceProviderBio from './components/service_provider_bio/service_provider_bio';
+import ServiceProviderProfile from './components/service_provider_profile/service_provider_profile';
 
 function App(){
   return (
     <body>
-      <ServiceProviderBio/>
+      <ServiceProviderProfile/>
     </body>
   )
  }
