@@ -207,60 +207,21 @@ def do_register():  # Assuming username, password, & email regex is implemented 
 #########
 # End of register
 
-# ContactUs 
-#########
-# @app.route('/contact', methods=['POST'])
-# @cross_origin(supports_credentials=True)
-# def contact():
-#     if request.method == 'POST':
-#         return do_contact()
-
-# def do_contact():
-
-#     content_type = request.headers.get('Content-Type')
-#     r = request 
-
-#     if (content_type == 'application/json'):
-#         json = r.json
-#         fullname = json['fullname']
-#         email = json['fullname']
-#         subject = json['subject']
-#         message = json['message']
-
-#     else:
-#         fullname = r.form['fullname']
-#         email = r.form['fullname']
-#         subject = r.form['subject']
-#         message = r.form['message']
-
-#     new_message = {'fullname': [fullname], 'email': [email], 'subject': [subject], 'message': [message] }
-#     df = pd.DataFrame.from_dict(new_message)
-#     mu.insert(config, 'contact_us', df)
-#     resp = make_response(
-#         jsonify(
-#             {"message": "Sent message!"}
-#         ),
-#         200,
-#     )
-#     resp.headers["Content-Type"] = "application/json"
-
-#     return resp
-
-#########
-# End of ContactUs
 
 # Delete Account 
 #########
 
-# NAMED AS CONTSACT US FOR NOW< CHANGE BEFORE PUSHING
-
-@app.route('/DeleteAccount', methods=['DELETE'])
+@app.route('/delete-account', methods=['POST'])
 @cross_origin(supports_credentials=True)
 def delete_account():
-    if request.method == 'DELETE':
+    if request.method == 'POST':
         return fetch()
 def fetch(): # gets uid
     user_id = get_user_id()
+    
+    print(user_id)
+
+    print("HELLO")
 
     if user_id == -1:
         resp = make_response(jsonify( {'message': 'User not logged in'} ), 400,)
@@ -287,6 +248,50 @@ def fetch(): # gets uid
 
 #########
 # End of Delete Account 
+
+# ContactUs 
+#########
+@app.route('/contact', methods=['POST'])
+@cross_origin(supports_credentials=True)
+def contact():
+    if request.method == 'POST':
+        return do_contact()
+
+def do_contact():
+
+    content_type = request.headers.get('Content-Type')
+    r = request 
+
+    if (content_type == 'application/json'):
+        json = r.json
+        fullname = json['fullname']
+        email = json['fullname']
+        subject = json['subject']
+        message = json['message']
+
+    else:
+        fullname = r.form['fullname']
+        email = r.form['fullname']
+        subject = r.form['subject']
+        message = r.form['message']
+
+    new_message = {'fullname': [fullname], 'email': [email], 'subject': [subject], 'message': [message] }
+    df = pd.DataFrame.from_dict(new_message)
+    mu.insert(config, 'contact_us', df)
+    resp = make_response(
+        jsonify(
+            {"message": "Sent message!"}
+        ),
+        200,
+    )
+    resp.headers["Content-Type"] = "application/json"
+
+    return resp
+
+#########
+# End of ContactUs
+
+
 
 # get-profile
 #########
@@ -400,7 +405,6 @@ def allowed_file(filename):         # Check if file type is in ALLOWED_EXTENSION
 
 # edit-profile-address
 #########
-
 @app.route('/edit-profile-address', methods=['POST'])
 @cross_origin(supports_credentials=True)
 def edit_profile_address():  # Change address on profile
@@ -428,6 +432,8 @@ def edit_profile_address():  # Change address on profile
 #########
 # End of edit-profile-address
 
+# check-user-type
+#########
 @app.route('/check-user-type', methods=['GET'])
 @cross_origin(supports_credentials=True)
 def check_user_type():
@@ -439,9 +445,9 @@ def check_user_type():
         resp = make_response( jsonify( {"user_type": f"{user_type}"} ), 200, )
     return resp
 
-@app.route('/') # For testing upload-profile-photo
-def render_homepage():
-    return render_template('dummy_image_upload.html')
+# @app.route('/') # For testing upload-profile-photo
+# def render_homepage():
+#     return render_template('dummy_image_upload.html')
 
 @app.route('/test-login') # For testing upload-profile-photo
 def test_login():
@@ -452,6 +458,26 @@ def get_user_id():   # uid is used to identify each user
         if request.cookies.get('sessionId') in SESSIONS.keys():
             return SESSIONS[request.cookies.get('sessionId')].uid
     return -1   # Session not found
+#########
+# End of check-user-type
+
+# logout
+#########
+@app.route('/logout', methods=['POST'])
+@cross_origin(supports_credentials=True)
+def logout():
+    user_id = get_user_id()
+    if user_id == -1:
+        resp = make_response( jsonify( {"Message": "User is not signed in, therefore cannot log out"} ), 400, )
+    else:
+        user_email = SESSIONS[request.cookies.get('sessionId')].email_address
+        del SESSIONS[request.cookies.get('sessionId')]  # Delete session from flask server sessions
+        resp = make_response( jsonify( {"user_type": f"Logout successful for: {user_email}"} ), 200, )
+        resp.set_cookie('sessionId', '', expires=0) # Set sessionId to expire immediately
+        # resp.delete_cookie('sessionId')
+    return resp
+#########
+# End of logout
 
 ################################################################################################################################################
 ################################################################################################################################################

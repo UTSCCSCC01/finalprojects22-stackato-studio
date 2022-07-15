@@ -13,22 +13,23 @@ const DeleteAccount = () => {
 
     const handleYes= () => {
 
-        fetch('https://jsonplaceholder.typicode.com/posts/1', { method: 'DELETE' })
-        .then(() => this.setState({ status: 'Delete successful' }));
+        // fetch('https://jsonplaceholder.typicode.com/posts/1', { method: 'DELETE' })
+        // .then(() => this.setState({ status: 'Delete successful' }));
 
-        // fetch('http://localhost:5000/delete-account', {
-        //     method: 'DELETE',
-        //     headers: {"Content-Type": "application/json"},
-        // }).then(response => {
-        //     if (response.ok){
-        //         console.log('User Deleted!'); 
-        //         window.location.reload();
-        //     }else {
-        //         throw new Error(response.statusText)
-        //     }
-        // }).catch(err => {
-        //     console.log(err)
-        // })
+        fetch('http://localhost:5000/delete-account', {
+            method: 'POST',
+            headers: {"Content-Type": "application/json"},
+            credentials: 'include',
+        }).then(response => {
+            if (response.ok){
+                console.log('User Deleted!'); 
+                window.location.reload();
+            }else {
+                throw new Error(response.statusText)
+            }
+        }).catch(err => {
+            console.log(err)
+        })
     };
 
     return(
@@ -38,6 +39,7 @@ const DeleteAccount = () => {
                 <p className='sure'> Are you sure you want to delete your account? </p>
                 <p className='sure'> Deleting account will result in losing all your data.</p>
 
+                {/* <button className = 'yes' onClick={handleYes}> <a href='/initial-signup-landing' >Yes</a> </button> */}
                 <button className = 'yes' onClick={handleYes}> <a href='/initial-signup-landing' >Yes</a> </button>
                 <button className='no'> <a href='/home' >No</a></button>
             </div>
