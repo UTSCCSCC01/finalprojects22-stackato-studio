@@ -201,35 +201,36 @@ const CustomerExplore = () => {
       <div id="explore_body">
         <div id="explore_left">
           <div id="explore_services_provided">Services Provided:</div>
-            <label class="filter">Hairdresser
-              <input type="checkbox" value={hairdresserFilter} onChange={handleHairdresser} id="isHairdresser" name="isHairdresser"/>
-              <span class="checkmark"></span>
-            </label>
 
-            <label class="filter">Barber
-              <input type="checkbox" value={barberFilter} onChange={handleBarber} id="isBarber" name="isBarber"/>
-              <span class="checkmark"></span>
-            </label>
+          <div className="filter">
+            Hairdresser
+            <input type="checkbox" value={hairdresserFilter} onChange={handleHairdresser} id="isHairdresser" name="isHairdresser"/>
+          </div>
 
-            <label class="filter">Cleaner
+          <div className="filter">
+            Barber
+            <input type="checkbox" value={barberFilter} onChange={handleBarber} id="isBarber" name="isBarber"/>
+          </div>
+
+          <div className="filter">
+            Cleaner
             <input type="checkbox" value={cleanerFilter} onChange={handleCleaner} id="isCleaner" name="isCleaner"/>
-              <span class="checkmark"></span>
-            </label>
+          </div>
 
-            <label class="filter">Massage
-              <input type="checkbox" value={massageFilter} onChange={handleMassage} id="isMassage" name="isMassage"/>
-              <span class="checkmark"></span>
-            </label>
+          <div className="filter">
+            Massage
+            <input type="checkbox" value={massageFilter} onChange={handleMassage} id="isMassage" name="isMassage"/>
+          </div>
 
-            <label class="filter">Eyebrow Tech
+          <div className="filter">
+            Eyebrow Tech
             <input type="checkbox" value={eyebrowFilter} onChange={handleEyebrow} id="isEyebrow" name="isEyebrow"/>
-              <span class="checkmark"></span>
-            </label>
+          </div>
 
-            <label class="filter">Eyelash Tech
+          <div className="filter">
+            Eyelash Tech
             <input type="checkbox" value={eyelashFilter} onChange={handleEyelash} id="isEyelash" name="isEyelash"/>
-              <span class="checkmark"></span>
-            </label>
+          </div>
         </div>
 
         <div id="explore_right">
