@@ -26,16 +26,18 @@ function getLabelText(value) {
 
 const ReviewRate = () => {
 
-    const [value, setValue] = React.useState(5);
+    const [value, setValue] = React.useState(5); // rating
     const [hover, setHover] = React.useState(-1);
     const [isPending, setIsPending] = useState(false);
     const [review, setReview] = useState('');
+    const [type_of_service, setTypeOfService] = useState(''); // how to get this 
+    const [sp_uid, setSPUid] = useState(''); // how to get this
     const [triggerReviewPopup, setReviewPopup] = useState(false);
     const navigate = useNavigate(); 
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const body = {review, value} // what else should be in the body?
+        const body = {sp_uid, type_of_service, value, review};
         setIsPending(true);
 
         // setReviewPopup(true); 
