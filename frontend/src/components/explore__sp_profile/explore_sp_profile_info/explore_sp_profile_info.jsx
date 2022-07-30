@@ -4,13 +4,17 @@ import "./explore_sp_profile_info_styles.css"
 import { Rating, Avatar, Badge, styled} from '@mui/material';
 import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
+import { useParams } from "react-router-dom";
 
 const ExploreSpInfo = ({SP}) => {
 
-    let navigate = useNavigate();
+    /*let navigate = useNavigate();
     function handleClick(){
         navigate('/appointment/' + SP)
-    }
+    }*/
+
+    let {sp_id} = useParams();
+    const uri = "http://localhost:5000/explore-sp/" + JSON.stringify(sp_id).replaceAll("\"", '');
 
     // initializing values
     const [addr, setAddr] = useState('');
