@@ -54,32 +54,6 @@ function Services_Provided () {
 		setSubtotal(subtotal);
 	};
 
-	 //handling POST request to add appointment
-     const handleSubmit = (e) => {
-		e.preventDefault();
-			 
-		var requestbody = new Object();
-		requestbody.date = date;
-		requestbody.time = time;
-	   
-		fetch('http://localhost:5000/add-appointment', {
-			method: 'POST',
-			headers: {"Content-Type": "application/json"},
-			body: JSON.stringify(requestbody)
-		}).then(response => {
-		if (response.ok) {
-			setTimeout(function () {
-				window.location.reload();
-			}, 1300);
-		}
-		else { // response is not ok
-			throw new Error(response.statusText)
-		}
-		}).catch(err => {
-			console.log(err)
-		})
-	};
-
 	return (
         <div className = "services-provided">
 		<div className='app-background'>
