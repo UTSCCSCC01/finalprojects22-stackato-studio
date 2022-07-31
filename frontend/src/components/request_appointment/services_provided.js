@@ -14,9 +14,20 @@ function Services_Provided () {
 		{ itemName: 'Digital perm', price: 19.99, quantity: 0,}
 	]);
 
+	const [date, setDate] = useState(new Date());
+    const [time, setTime] = useState('08:00');
+    const onChange = date => {
+        setDate(date);
+    };
+    const onChangeTime = time => {
+        setTime(time);
+        console.log(time);
+    };
+
 	const [totalItemCount, setTotalItemCount] = useState();
 
     const [subtotal, setSubtotal] = useState();
+
 
 	const handleQuantityIncrease = (index) => {
 		const newItems = [...items];
@@ -54,6 +65,32 @@ function Services_Provided () {
 		setSubtotal(subtotal);
 	};
 
+	 //handling POST request to add appointment
+     const handleSubmit = (e) => {
+		e.preventDefault();
+			 
+		var requestbody = new Object();
+		requestbody.date = date;
+		requestbody.time = time;
+	   
+		fetch('http://localhost:3000/add-appointment', {
+			method: 'POST',
+			headers: {"Content-Type": "application/json"},
+			body: JSON.stringify(requestbody)
+		}).then(response => {
+		if (response.ok) {
+			setTimeout(function () {
+				window.location.reload();
+			}, 1300);
+		}
+		else { // response is not ok
+			throw new Error(response.statusText)
+		}
+		}).catch(err => {
+			console.log(err)
+		})
+	};
+
 	return (
         <div className = "services-provided">
 		<div className='app-background'>
@@ -86,7 +123,7 @@ function Services_Provided () {
 		</div>
         <div>
         <div className='subtotal'> <b>Subtotal: ${parseFloat(subtotal).toFixed(2)}</b></div>
-        <div className='payment'> <button className='paymentButton'> <b>Checkout and Pay</b> <FontAwesomeIcon className='checkout_arrowicon'icon={faArrowRight}/></button></div>
+        <div className='payment'> <button className='paymentButton' onPress={handleSubmit}> <b>Checkout and Pay</b> <FontAwesomeIcon className='checkout_arrowicon'icon={faArrowRight}/></button></div>
         </div>
         </div>
 	);
