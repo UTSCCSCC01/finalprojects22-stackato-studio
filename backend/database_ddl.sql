@@ -35,22 +35,18 @@ create table amorr.contact_us (
   `subject` varchar(255), 
   `message` varchar(255));
 
--- Contact info table
 create table contact_info (
   `name` varchar(255), 
   `email` varchar(255), 
   `message` varchar(255));
 
--- Reviews given to SPs from Customers
-CREATE TABLE amorr.sp_reviews (
-  `appointment_id` INT NOT NULL,
+CREATE TABLE amorr.sp_reviews (	-- Reviews given to SPs from Customers
   `recipient_uid` INT NOT NULL,
   `reviewer_uid` INT NOT NULL,
-  `date` VARCHAR(45) NULL,
+  `type_of_service` VARCHAR(45) NULL,
   `rating` VARCHAR(45) NULL,
   `review` VARCHAR(1000) NULL);
 
--- Services table
 CREATE TABLE `amorr`.`services` (
   `service_id` INT NOT NULL AUTO_INCREMENT,
   `uid` VARCHAR(45) NOT NULL,
@@ -58,16 +54,9 @@ CREATE TABLE `amorr`.`services` (
   `price` VARCHAR(45) NULL,
   PRIMARY KEY(service_id));
 
--- Appointments table (confirmed/awaiting/past)
-CREATE TABLE `amorr`.`appointments` (
-  `appointment_id` INT NOT NULL AUTO_INCREMENT,
-  `customer_uid` VARCHAR(45) NOT NULL,
-  `sp_uid` VARCHAR(45) NOT NULL,
-  `services` VARCHAR(100) NULL,
-  `time` VARCHAR(100) NULL,
-  `date` VARCHAR(100) NULL,
-  `price` VARCHAR(45) NULL,
-  `address` VARCHAR(300) NULL,
-  `status` VARCHAR(100) NULL,
-  `reviewed` VARCHAR(10) NULL,
-  PRIMARY KEY (`appointment_id`));
+-- Cleanup
+/*
+DROP TABLE amorr.customers;
+DROP TABLE amorr.service_providers;
+DROP TABLE amorr.users;
+*/
