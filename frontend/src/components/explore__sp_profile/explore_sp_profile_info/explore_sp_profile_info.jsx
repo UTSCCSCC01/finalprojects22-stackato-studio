@@ -6,17 +6,12 @@ import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import { useParams } from "react-router-dom";
 
-const ExploreSpInfo = () => {
+const ExploreSpInfo = ({SP}) => {
 
-    /*let navigate = useNavigate();
+    let navigate = useNavigate();
     function handleClick(){
         navigate('/appointment/' + SP)
-    }*/
-
-    let {sp_id} = useParams();
-    console.log(sp_id);
-    const uri = "http://localhost:3000/appointment/" + JSON.stringify(sp_id).replaceAll("\"", '');
-    console.log(uri);
+    }
 
     // initializing values
     const [addr, setAddr] = useState('');
@@ -57,7 +52,7 @@ const ExploreSpInfo = () => {
             <div id="service_provider_right">
                 <div id="first_line">
                     <div id="service_provider_name">{fullName}</div>
-                    <div><button id="req_appointment">Request an Appointment</button></div>
+                    <div><button id="req_appointment" onClick={handleClick}>Request an Appointment</button></div>
                 </div>
                 <div id="rating">
                     <span className="rating_num">{rating.toFixed(1)}</span>
