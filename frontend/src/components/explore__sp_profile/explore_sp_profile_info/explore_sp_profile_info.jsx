@@ -15,7 +15,7 @@ const ExploreSpInfo = () => {
 
     let {sp_id} = useParams();
     console.log(sp_id);
-    const uri = "http://localhost:5000/review/" + JSON.stringify(sp_id).replaceAll("\"", '');
+    const uri = "http://localhost:3000/appointment/" + JSON.stringify(sp_id).replaceAll("\"", '');
     console.log(uri);
 
     // initializing values
