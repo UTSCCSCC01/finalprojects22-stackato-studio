@@ -8,13 +8,20 @@ import ContactUs from './components/contact_us/contact_us';
 import CustomerRegistration from './components/customer_registration/customer_registration';
 import ServiceProviderRegistration from './components/service_provider_registration/service_provider_registration';
 import FAQ from './components/FAQ/FAQpage';
-
 import Home from './components/home/Home';
 import LoginSignupLanding from './components/initial_login_signup_landing/login_signup_landing';
 import InitialLogin from './components/initial-login/initial-login';
 import InitialSignUp from './components/initial-signup/initial-signup';
 import Login from './components/login-page/login-page';
 import CustomerProfile from './components/customer_profile/customer_profile';
+import ServiceProviderProfile from './components/service_provider_profile/service_provider_profile.jsx';
+import CustomerExplore from './components/customer_explore/customer_explore.jsx';
+import DeleteAccount from './components/delete_account/delete_account';
+import ExploreSpProfile from './components/explore__sp_profile/explore_sp_profile.js';
+import RequestAppointment from './components/request_appointment/RequestAppointment';
+import ServiceProviderAppointments from './components/sp_my_appointments/my_appointments';
+import CustomerAppointments from './components/customer_my_appointments/my_appointments';
+import ReviewRating from './components/review_rating/review_rating';
 
 import {
   BrowserRouter as Router,
@@ -22,7 +29,6 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import ServiceProviderProfile from './components/service_provider_profile/service_provider_profile.jsx';
 
 function App(){
   
@@ -71,7 +77,14 @@ function App(){
         <Route path='/login' element={<Login/>} />
         <Route path='/profile' element={<CustomerProfile/>}/>
         <Route path='/sp_profile' element={<ServiceProviderProfile/>}/>
-
+        <Route path='/explore' element={<CustomerExplore/>}/>
+        <Route path='/logout' element={<InitialLogin/>}/>
+        <Route path = '/delete-account' element={<DeleteAccount/>}></Route>
+        <Route path = '/appointment/:id' element={<RequestAppointment/>}></Route>
+        <Route path = '/explore-sp/:id' element={<ExploreSpProfile/>}></Route>
+        <Route path = '/sp-my-appointments' element={<ServiceProviderAppointments/>}></Route>
+        <Route path = '/customer-my-appointments' element={<CustomerAppointments/>}></Route>
+        <Route path = '/review/:appointment_id' element={<ReviewRating/>}></Route>
       </Routes>
     </Router>
     </body>
