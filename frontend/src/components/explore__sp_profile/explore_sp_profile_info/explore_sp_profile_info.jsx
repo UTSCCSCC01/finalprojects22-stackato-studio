@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import { useParams } from "react-router-dom";
 
-const ExploreSpInfo = ({SP}) => {
+const ExploreSpInfo = () => {
 
     /*let navigate = useNavigate();
     function handleClick(){
@@ -14,7 +14,9 @@ const ExploreSpInfo = ({SP}) => {
     }*/
 
     let {sp_id} = useParams();
-    const uri = "http://localhost:5000/explore-sp/" + JSON.stringify(sp_id).replaceAll("\"", '');
+    console.log(sp_id);
+    const uri = "http://localhost:5000/review/" + JSON.stringify(sp_id).replaceAll("\"", '');
+    console.log(uri);
 
     // initializing values
     const [addr, setAddr] = useState('');
