@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Rating, Avatar, requirePropFactory } from '@mui/material';
 import img from '../../../assets/customer_explore/sp.jpg'
 import './interactive_sp_card_styles.css'
@@ -8,6 +8,11 @@ function InteractiveCard({SP}) {
     function handleClick() {
       navigate('/explore-sp/' + SP.id)
     }
+
+    const [img, setImage] = useState(null);
+    useEffect(() => {
+        setImage(`http://localhost:5000/explore-profile-photo/${SP.id}`)
+      }, []);
 
     return (
         <div id="interactive_card" onClick={handleClick}>
@@ -22,7 +27,7 @@ function InteractiveCard({SP}) {
                         <span className="rating_num">({SP.num_ratings})</span>
                     </div>
                     <div id="second_line">
-                        <div id="services_completed"> <span>75</span> Services Completed</div>
+                        <div id="services_completed"> <span>2</span> Services Completed</div>
                         <div><span>$</span> <span>4.95</span> Transportation Fee</div>
                     </div>
 

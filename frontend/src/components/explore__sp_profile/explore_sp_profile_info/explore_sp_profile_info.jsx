@@ -20,7 +20,6 @@ const ExploreSpInfo = ({ id }) => {
     const [rating, setRating] = useState(0);
     const [file, setFile] = useState('');
 
-    // dummy get request to get data
     useEffect(() => {
         setImage(`http://localhost:5000/explore-profile-photo/${id}`)
         fetch(`http://localhost:5000/explore-sp-profile/${id}`, {credentials: 'include'}).then(response =>
