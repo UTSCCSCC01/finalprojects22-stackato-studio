@@ -613,7 +613,7 @@ def fetch_sp_profile():  # Fetch full name and address from database
         if avg is not None:
             avg_rating = round(mu.load(config, 'amorr.sp_reviews', query=sql)[0]['AVG(rating)'], 1)
         else:
-            avg_rating = 'No reviews yet'
+            avg_rating = 0
 
 
         resp = make_response(
@@ -745,7 +745,7 @@ def fetch_sps():
         if avg is not None:
             avg_rating = round(mu.load(config, 'amorr.sp_reviews', query=sql)[0]['AVG(rating)'], 1)
         else:
-            avg_rating = 'No reviews yet'
+            avg_rating = 0
         tos_str = sp['type_of_services']
         tos = tos_str.strip('][').split(', ')   # Convert from string to list
         for i in range(len(tos)):
@@ -1013,11 +1013,12 @@ def explore_sp_profile(sp_uid):
     if avg is not None:
         avg_rating = round(mu.load(config, 'amorr.sp_reviews', query=sql)[0]['AVG(rating)'], 1)
     else:
-        avg_rating = 'No reviews yet'
+        avg_rating = 0
 
     data['avg_rating'] = avg_rating
 
     resp = make_response(jsonify(data), 200,)
+    print(data)
     resp.headers["Content-Type"] = "application/json"
     return resp
 #########
