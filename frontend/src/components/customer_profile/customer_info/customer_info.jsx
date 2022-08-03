@@ -10,18 +10,22 @@ const CustomerInfo = () => {
     const [img, setImage] = useState(null);
     const [isEdit, setIsEdit] = useState(false);
     const [fullName, setFullName] = useState('');
-    const [file, setFile] = useState('')
+    const [file, setFile] = useState('');
+    const [numServices, setNumServices] = useState(null);
 
     useEffect(() => {
-        setImage("http://localhost:5000/get-profile-photo");
+        setImage(`http://localhost:5000/get-profile-photo`);
         fetch("http://localhost:5000/get-profile", {credentials: 'include'}).then(response =>
           response.json().then(data => {
             setUser(data);
             setAddr(data.address);
             setFullName(data.full_name);
-          })
-        );
-
+          }));
+        fetch("http://localhost:5000/get-order-count", {credentials: 'include'}).then(response =>
+          response.json().then(data => {
+            console.log(data.count);
+            setNumServices(data.count);
+          }));
       }, []);
 
     const imageHandler = (e) => {
@@ -111,13 +115,13 @@ const CustomerInfo = () => {
 
                 <div id="customer_name">{fullName}</div>
 
-                <div id="rating">
+                {/* <div id="rating">
                     <span className="rating_num">4.5</span>
                     <Rating name="read-only" size="medium" value={4.5} precision={0.5} readOnly />
                     <span className="rating_num">(4)</span>
-                </div>
+                </div> */}
 
-                <div id="services_ordered"> <span>75 </span>Services Ordered</div>
+                <div id="services_ordered"> <span>{numServices}</span> Services Ordered</div>
                 <div id="editable_line">
                     {!isEdit ? 
                     (

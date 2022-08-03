@@ -10,8 +10,14 @@ function InteractiveCard({SP}) {
     }
 
     const [img, setImage] = useState(null);
+    const [numServices, setNumServices] = useState(null);
     useEffect(() => {
-        setImage(`http://localhost:5000/explore-profile-photo/${SP.id}`)
+        setImage(`http://localhost:5000/explore-profile-photo/${SP.id}`);
+        fetch(`http://localhost:5000/get-explore-order-count/${SP.id}`, {credentials: 'include'}).then(response =>
+            response.json().then(data => {
+              console.log(data.count);
+              setNumServices(data.count);
+            }));
       }, []);
 
     return (
@@ -27,7 +33,7 @@ function InteractiveCard({SP}) {
                         <span className="rating_num">({SP.num_ratings})</span>
                     </div>
                     <div id="second_line">
-                        <div id="services_completed"> <span>2</span> Services Completed</div>
+                        <div id="services_completed"> <span>{numServices}</span> Service Orders</div>
                         <div><span>$</span> <span>4.95</span> Transportation Fee</div>
                     </div>
 

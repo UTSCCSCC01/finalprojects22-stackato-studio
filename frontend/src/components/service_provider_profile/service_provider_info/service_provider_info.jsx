@@ -14,6 +14,7 @@ const ServiceProviderInfo = () => {
     const [numRating, setNumRating] = useState(0);
     const [rating, setRating] = useState(0);
     const [file, setFile] = useState('');
+    const [numServices, setNumServices] = useState(null);
 
     // dummy get request to get data
     useEffect(() => {
@@ -26,8 +27,12 @@ const ServiceProviderInfo = () => {
             setRating(data.avg_rating);
             console.log(data.num_ratings);
             console.log(data.avg_rating);
-          })
-        );
+          }));
+          fetch("http://localhost:5000/get-order-count", {credentials: 'include'}).then(response =>
+            response.json().then(data => {
+              console.log(data.count);
+              setNumServices(data.count);
+            }));
       }, []);
 
     // for handling changing profile photo
@@ -125,7 +130,7 @@ const ServiceProviderInfo = () => {
                     <span className="rating_num">({numRating})</span>
                 </div>
 
-                <div id="services_completed"> <span>75 </span>Services Completed</div>
+                <div id="services_completed"> <span>{numServices}</span> Service Orders</div>
                 <div id="editable_line">
                     {!isEdit ? 
                     (

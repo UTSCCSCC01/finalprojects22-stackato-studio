@@ -19,6 +19,7 @@ const ExploreSpInfo = ({ id }) => {
     const [numRating, setNumRating] = useState(0);
     const [rating, setRating] = useState(0);
     const [file, setFile] = useState('');
+    const [numServices, setNumServices] = useState(null);
 
     useEffect(() => {
         setImage(`http://localhost:5000/explore-profile-photo/${id}`)
@@ -32,6 +33,11 @@ const ExploreSpInfo = ({ id }) => {
             console.log(data.avg_rating);
           })
         );
+        fetch(`http://localhost:5000/get-explore-order-count/${id}`, {credentials: 'include'}).then(response =>
+            response.json().then(data => {
+              console.log(data.count);
+              setNumServices(data.count);
+            }));
       }, []);
 
     return(
@@ -53,7 +59,7 @@ const ExploreSpInfo = ({ id }) => {
                     <span className="rating_num">({numRating})</span>
                 </div>
 
-                <div id="services_completed"> <span>75 </span>Services Completed</div>
+                <div id="services_completed"> <span>{numServices}</span> Service Orders</div>
                 <div id="editable_line">
                         <div id="user_address">{addr}</div>
                 </div>

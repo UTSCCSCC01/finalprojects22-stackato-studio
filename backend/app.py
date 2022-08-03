@@ -1088,6 +1088,70 @@ def add_appointment():
 #########
 # End of add-appointment
 
+# get-order-count
+#########
+@app.route('/get-order-count', methods=['GET'])
+@cross_origin(supports_credentials=True)
+def get_order_count():
+    user_id = get_user_id()
+    if user_id == -1:
+        resp = make_response( jsonify( {"message": "Please log in to view your profile"} ), 400, )
+        return resp
+
+    user = mu.load(config, 'amorr.users', f'SELECT * FROM amorr.users WHERE uid = \'{user_id}\'')
+    if len(user) == 0:
+        resp = make_response(
+            jsonify(
+                {"message": "User not found!"}
+            ),
+            404,
+        )
+    else:
+        query = f"""
+        SELECT COUNT(appointment_id) as count
+        FROM appointments
+        WHERE sp_uid={user_id} OR customer_uid={user_id};
+        """
+
+        data = mu.load(config, 'amorr.appointments', query=query)
+        resp = make_response(jsonify({"count": data[0]['count']}), 200,)
+    resp.headers["Content-Type"] = "application/json"
+    return resp
+#########
+# End of get-order-count
+
+# get-explore-order-count
+#########
+@app.route('/get-explore-order-count/<sp_uid>', methods=['GET'])
+@cross_origin(supports_credentials=True)
+def get_explore_order_count(sp_uid):
+    print(sp_uid)
+    if sp_uid == -1:
+        resp = make_response( jsonify( {"message": "Please log in to view your profile"} ), 400, )
+        return resp
+
+    user = mu.load(config, 'amorr.users', f'SELECT * FROM amorr.users WHERE uid = \'{sp_uid}\'')
+    if len(user) == 0:
+        resp = make_response(
+            jsonify(
+                {"message": "User not found!"}
+            ),
+            404,
+        )
+    else:
+        query = f"""
+        SELECT COUNT(appointment_id) as count
+        FROM appointments
+        WHERE sp_uid={sp_uid};
+        """
+
+        data = mu.load(config, 'amorr.appointments', query=query)
+        resp = make_response(jsonify({"count": data[0]['count']}), 200,)
+    resp.headers["Content-Type"] = "application/json"
+    return resp
+#########
+# End of get-explore-order-count
+
 ################################################################################################################################################
 ################################################################################################################################################
 ################################################################################################################################################
