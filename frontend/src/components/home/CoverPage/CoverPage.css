@@ -40,7 +40,7 @@
 
 .coverpage-container #loop {
     color: #0b5394;
-    font-size: 170%;
+    font-size: 30px;
     font-family: "poppins";
     font-weight: 700;
     text-align: center;
@@ -51,7 +51,7 @@
 
 .coverpage-container .subtext {
     color: black;
-    font-size: 150%;
+    font-size: 28px;
     font-family: "poppins";
     font-weight: 700;
     text-align: center;

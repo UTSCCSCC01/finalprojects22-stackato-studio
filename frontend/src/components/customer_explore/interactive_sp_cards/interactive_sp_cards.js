@@ -34,7 +34,7 @@ function InteractiveCard({SP}) {
                     </div>
                     <div id="second_line">
                         <div id="services_completed"> <span>{numServices}</span> Service Orders</div>
-                        <div><span>$</span> <span>4.95</span> Transportation Fee</div>
+                        {/* <div><span>$</span> <span>4.95</span> Transportation Fee</div> */}
                     </div>
 
                     <div id="third_line">

@@ -32,7 +32,7 @@ function CoverPage() {
                 </div>
                 <div class="search-bar">
                     <input class="inputSearchCP" type="text" placeholder="Search..."></input>
-                    <a class="search-btn" href="http://localhost:3000/"> </a>
+                    <a class="search-btn" href="/explore"> </a>
                 </div>
             </div>
         </div>

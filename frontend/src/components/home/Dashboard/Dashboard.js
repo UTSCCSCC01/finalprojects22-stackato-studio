@@ -20,16 +20,16 @@ function Dashboard() {
         </h1>
         <div className='cards_container'>
             <ul className='cards_items'>
-                <CardItem title='Hairdresser' img={hairdresser} redirection="http://localhost:3000/"></CardItem>
-                <CardItem title='Makeup' img={makeup} redirection="http://google.com"></CardItem>
-                <CardItem title='Eyebrow Tech' img={eyebrowTech} redirection="http://localhost:3000/"></CardItem>
-                <CardItem title='Eyelash Tech' img={eyelashTech} redirection="http://localhost:3000/"></CardItem>
+                <CardItem title='Hairdresser' img={hairdresser} redirection="/explore"></CardItem>
+                <CardItem title='Makeup' img={makeup} redirection="/explore"></CardItem>
+                <CardItem title='Eyebrow Tech' img={eyebrowTech} redirection="/explore"></CardItem>
+                <CardItem title='Eyelash Tech' img={eyelashTech} redirection="/explore"></CardItem>
             </ul>
             <ul className='cards_items'>
-                <CardItem title='Massage' img={massage} redirection="http://localhost:3000/"></CardItem>
-                <CardItem title='Barber' img={barber} redirection="http://localhost:3000/"></CardItem>
-                <CardItem title='Cleaner' img={cleaner} redirection="http://localhost:3000/"></CardItem>
-                <CardItem title='See More' img={seeMore} redirection="http://localhost:3000/"></CardItem>
+                <CardItem title='Massage' img={massage} redirection="/explore"></CardItem>
+                <CardItem title='Barber' img={barber} redirection="/explore"></CardItem>
+                <CardItem title='Cleaner' img={cleaner} redirection="/explore"></CardItem>
+                <CardItem title='See More' img={seeMore} redirection="/explore"></CardItem>
             </ul>
         </div>
       </div>
