@@ -137,7 +137,7 @@
     - 1 mark  = at least one team member did not complete any task or did not have any task assigned
     - 0 marks = most of team members have no tasks assigned and/or completed
 
-    Your Mark: 1 -- Efkan didn't have any tasks assigned
+    Your Mark: 3
 
   - Branch Naming (max 2 marks)
     - 2 marks = every team branch is named after the associated single ticket number
@@ -160,7 +160,7 @@
 
     Your Mark: 2
 
-Tracking on Jira Total Mark: 21 / 24
+Tracking on Jira Total Mark: 23 / 24
 
 ---
 ## Sprint Completion (Max 20 marks) 
@@ -242,6 +242,6 @@ Tracking on Jira Total Mark: 21 / 24
 
 ## Total Mark
 
-89 / 93
+91 / 93
 
 - There only like one more sprint left, but for the unstarted sprints there, make a new doc on your repo for your justification, instead of commenting on the ticket
