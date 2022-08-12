@@ -162,8 +162,8 @@ Tracking on Jira Total Mark: 19 / 20
   - Started stories that are incomplete will be counted
   - Mark Breakdown: [x = Percentage of story points completed * 20]
 
-  Your Mark: 16 / 20
-  Note: quite a few user stories were removed and there was no justification
+  Your Mark: 18 / 20
+  Note: Justification provided at the last minute
 
 ---
 ## System Design (PDF or MD file or another suitable format) (max 10 marks) 
@@ -238,5 +238,5 @@ Tracking on Jira Total Mark: 19 / 20
 
 ## Total Mark
 
-81 / 89
+83 / 89
 Note: there's a little bit of an inconsistency, some of the branches have the user story ticket number, but some branches have the task ticket number. To keep things consistent, try to just have branches for tasks and not for user stories.
